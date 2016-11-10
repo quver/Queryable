@@ -7,6 +7,6 @@ before_install:
 - pod repo update --silent
 - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -workspace Example/Queryable.xcworkspace -scheme Queryable-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=10.0' ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint
+- set -o pipefail && xcodebuild test -workspace Example/Queryable.xcworkspace -scheme Queryable-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=10.0' | xcpretty
+- pod lib lint --allow-warnings
 after_success: bash <(curl -s https://codecov.io/bash) -J 'Queryable'
