@@ -4,9 +4,9 @@ cache: cocoapods
 podfile: Example/Podfile
 before_install:
 - gem install cocoapods
-- pod repo update
+- pod repo update --silent
 - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -workspace Example/Queryable.xcworkspace -scheme Queryable-Example -sdk iphonesimulator10.0 ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/Queryable.xcworkspace -scheme Queryable-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=10.0' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
 after_success: bash <(curl -s https://codecov.io/bash) -J 'Queryable'
