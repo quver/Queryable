@@ -25,7 +25,7 @@ $ gem install cocoapods
 Then go to your project directory and run:
 
 ```bash
-pod init
+$ pod init
 ```
 
 in `Podfile` add:
