@@ -8,7 +8,7 @@ Extension for CRUD operation just on object
                        DESC
 
   s.homepage         = 'https://github.com/quver/Queryable'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
   s.author           = { 'Paweł Bednorz' => 'pawel@quver.pl' }
   s.source           = { :git => 'https://github.com/quver/Queryable.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/plquver'
