@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'Realm Query Extension'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Extension for CRUD operation just on object
                        DESC
 
   s.homepage         = 'https://github.com/quver/Queryable'
