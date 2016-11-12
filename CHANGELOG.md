@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.0.1](https://github.com/quver/Queryable/tree/1.0.1) (2016-11-12)
+[Full Changelog](https://github.com/quver/Queryable/compare/1.0.0...1.0.1)
+
+**Merged pull requests:**
+
+- Documentation update [\#4](https://github.com/quver/Queryable/pull/4) ([quver](https://github.com/quver))
+- Update Queryable.podspec [\#3](https://github.com/quver/Queryable/pull/3) ([quver](https://github.com/quver))
+
 ## [1.0.0](https://github.com/quver/Queryable/tree/1.0.0) (2016-11-11)
 **Merged pull requests:**
 
