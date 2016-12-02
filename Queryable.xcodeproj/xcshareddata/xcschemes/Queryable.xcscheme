@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "Queryable_Example.app"
-               BlueprintName = "Queryable_Example"
-               ReferencedContainer = "container:Queryable.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Queryable_Tests.xctest"
-               BlueprintName = "Queryable_Tests"
+               BlueprintIdentifier = "D5128BC71DF1DA3B0037DF78"
+               BuildableName = "Queryable.app"
+               BlueprintName = "Queryable"
                ReferencedContainer = "container:Queryable.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,16 +26,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Queryable_Tests.xctest"
-               BlueprintName = "Queryable_Tests"
+               BlueprintIdentifier = "D5128BDB1DF1DA3C0037DF78"
+               BuildableName = "QueryableTests.xctest"
+               BlueprintName = "QueryableTests"
                ReferencedContainer = "container:Queryable.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Queryable_Example.app"
-            BlueprintName = "Queryable_Example"
+            BlueprintIdentifier = "D5128BC71DF1DA3B0037DF78"
+            BuildableName = "Queryable.app"
+            BlueprintName = "Queryable"
             ReferencedContainer = "container:Queryable.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,9 +65,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Queryable_Example.app"
-            BlueprintName = "Queryable_Example"
+            BlueprintIdentifier = "D5128BC71DF1DA3B0037DF78"
+            BuildableName = "Queryable.app"
+            BlueprintName = "Queryable"
             ReferencedContainer = "container:Queryable.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -99,9 +84,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Queryable_Example.app"
-            BlueprintName = "Queryable_Example"
+            BlueprintIdentifier = "D5128BC71DF1DA3B0037DF78"
+            BuildableName = "Queryable.app"
+            BlueprintName = "Queryable"
             ReferencedContainer = "container:Queryable.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

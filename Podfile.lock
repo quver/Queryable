@@ -1,6 +1,6 @@
 PODS:
   - Nimble (5.1.1)
-  - Queryable (1.0.1):
+  - Queryable (1.0.2):
     - RealmSwift (~> 2.0)
   - Quick (0.10.0)
   - Realm (2.0.3):
@@ -11,20 +11,20 @@ PODS:
 
 DEPENDENCIES:
   - Nimble
-  - Queryable (from `../`)
+  - Queryable (from `./`)
   - Quick
 
 EXTERNAL SOURCES:
   Queryable:
-    :path: ../
+    :path: ./
 
 SPEC CHECKSUMS:
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
-  Queryable: 4e9901c789e9bc4c0aca01c54de2dcfc2dfc6e62
+  Queryable: 92a180ea40df575f25cd962f55f5b83d31aee5b1
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
 
-PODFILE CHECKSUM: 5fd43c6f18d5511b6b0d216791e2cd3ad7cfaa18
+PODFILE CHECKSUM: df0119b1689968079913fbea5269340574eb2558
 
 COCOAPODS: 1.2.0.beta.1
