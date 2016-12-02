@@ -4,9 +4,6 @@
 target 'Queryable' do
   use_frameworks!
 
-  pod 'Queryable', :path => './'
-
-
   target 'QueryableTests' do
     inherit! :search_paths
 
