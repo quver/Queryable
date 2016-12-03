@@ -4,8 +4,7 @@
 target 'Queryable' do
   use_frameworks!
 
-  pod 'Queryable', :path => './'
-
+  pod 'RealmSwift', '~> 2.0'
 
   target 'QueryableTests' do
     inherit! :search_paths

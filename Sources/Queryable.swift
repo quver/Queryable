@@ -9,49 +9,27 @@
 import Foundation
 import RealmSwift
 
-public protocol Queryable: class {
+public protocol Queryable: class {}
+
+public extension Queryable where Self: Object {
 
   typealias Completion = () -> ()
   typealias Transaction = () -> ()
 
-  /// Class must implement assiociatedtype
-  associatedtype Model: Object
-
-  /// All object of entity
-  static var allObjects: [Model] { get }
-
-  /// Add self to database
+  /// Fetch all object from database
   ///
-  /// - returns: Status of write transaction
-  func add() -> Bool
-
-  /// Remove self from database
-  ///
-  /// - returns: Status of write transaction
-  func remove() -> Bool
-
-
-  /// Update object in database. All changes must be performed in write transaction closure.
-  ///
-  /// - parameter transaction: Closure for performing changes
-  /// - parameter completion:  Completion callback for UI update
-  func update(transaction: @escaping Transaction, completion: Completion?)
-
+  /// - returns: Array of objects
+  static func allObjects() -> [Self] {
+    return QueryManager.getObjects(of: Self.self)
+  }
 
   /// Fetch objects with filter
   ///
   /// - parameter filter: Same syntax as in pure Realm
   ///
   /// - returns: Array of objects
-  static func filtred(_ filter: String) -> [Model]
-
-}
-
-public extension Queryable where Self: Object {
-
-  /// All object of entity
-  static var allObjects: [Model] {
-    return QueryManager.getObjects(of: Model.self)
+  static func filtred(_ filter: String) -> [Self] {
+    return QueryManager.getObjects(of: Self.self, filter: filter)
   }
 
   /// Add self to database
@@ -72,18 +50,13 @@ public extension Queryable where Self: Object {
   ///
   /// - parameter transaction: Closure for performing changes
   /// - parameter completion:  Completion callback for UI update
-  func update(transaction: @escaping Transaction, completion: Completion?) {
-    _ = QueryManager.update { transaction() }
+  ///
+  /// - returns: Status of write transaction
+  func update(transaction: @escaping Transaction, completion: Completion?) -> Bool {
+    let result = QueryManager.update { transaction() }
     completion?()
-  }
 
-  /// Fetch objects with filter
-  ///
-  /// - parameter filter: Same syntax as in pure Realm
-  ///
-  /// - returns: Array of objects
-  static func filtred(_ filter: String) -> [Model] {
-    return QueryManager.getObjects(of: Model.self, filter: filter)
+    return result
   }
   
 }
