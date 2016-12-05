@@ -40,6 +40,11 @@ end
 
 ## Usage
 
+### Migration from 1.x to 2.x
+* `typealias Model` is removed and no longer needed
+
+* `allObjects` static property is now `allObjects()` static method
+
 ### CUD operations
 
 ```swift
@@ -49,9 +54,7 @@ class Foo: Object {
 }
 
 // Conform to protocol
-extension Foo: Queryable {
-	typealias Model = Foo
-}
+extension Foo: Queryable {}
 
 // Create simple object
 let foo = Foo()
@@ -73,7 +76,7 @@ _ = foo.remove()
 
 ```swift
 // Fetch all objects
-_ = Foo.allObjects
+_ = Foo.allObjects()
 
 // Fetch filtred objects
 _ = Foo.filtred("bar == 'something'")
