@@ -12,6 +12,12 @@ Realm Query Extension
 * Xcode 8.0+
 * Swift 3.0+
 
+## Contribute
+
+* If you want to add something feels free to add pull request
+* If you find bug or suggestion, please create issue
+* Thanks for all starts
+
 ## Installation
 
 ### CocoaPods
