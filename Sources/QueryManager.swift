@@ -36,7 +36,7 @@ public final class QueryManager {
   /// - parameter object: Object which inherit from RealmSwift.Object
   ///
   /// - returns: Status of write transaction
-  public class func add(object: Object) -> Bool {
+  @discardableResult public class func add(object: Object) -> Bool {
     return genericWrite { realm in
       realm.add(object)
     }
@@ -47,7 +47,7 @@ public final class QueryManager {
   /// - parameter transaction: closure with object changes
   ///
   /// - returns: Status of write transaction
-  public class func update(transaction: @escaping ()->()) -> Bool {
+  @discardableResult public class func update(transaction: @escaping ()->()) -> Bool {
     return genericWrite { _ in
       transaction()
     }
@@ -57,7 +57,7 @@ public final class QueryManager {
   /// Generic remove all object from Realm
   ///
   /// - returns: Status of write transaction
-  public class func removeAll() -> Bool {
+  @discardableResult public class func removeAll() -> Bool {
     return genericWrite { realm in
       realm.deleteAll()
     }
@@ -68,7 +68,7 @@ public final class QueryManager {
   /// - parameter object: Object which should be removed
   ///
   /// - returns: Status of write transaction
-  public class func remove(object: Object) -> Bool {
+  @discardableResult public class func remove(object: Object) -> Bool {
     return genericWrite { realm in
       realm.delete(object)
     }
