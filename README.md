@@ -67,15 +67,15 @@ let foo = Foo()
 foo.bar = "something"
 
 // Save objec
-_ = foo.add()
+foo.add()
 
 // Update object
-_ = foo.update(transaction: {
+foo.update(transaction: {
     foo.bar = "something other"
 }, completion: nil)
 
 // Remove object
-_ = foo.remove()
+foo.remove()
 ```
 
 ### Fetching objects
