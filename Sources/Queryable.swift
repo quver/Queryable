@@ -28,21 +28,21 @@ public extension Queryable where Self: Object {
   /// - parameter filter: Same syntax as in pure Realm
   ///
   /// - returns: Array of objects
-  static func filtred(_ filter: String) -> [Self] {
+  @discardableResult static func filtred(_ filter: String) -> [Self] {
     return QueryManager.getObjects(of: Self.self, filter: filter)
   }
 
   /// Add self to database
   ///
   /// - returns: Status of write transaction
-  func add() -> Bool {
+  @discardableResult func add() -> Bool {
     return QueryManager.add(object: self)
   }
 
   /// Remove self from database
   ///
   /// - returns: Status of write transaction
-  func remove() -> Bool {
+  @discardableResult func remove() -> Bool {
     return QueryManager.remove(object: self)
   }
 
@@ -52,7 +52,7 @@ public extension Queryable where Self: Object {
   /// - parameter completion:  Completion callback for UI update
   ///
   /// - returns: Status of write transaction
-  func update(transaction: @escaping Transaction, completion: Completion?) -> Bool {
+  @discardableResult func update(transaction: @escaping Transaction, completion: Completion?) -> Bool {
     let result = QueryManager.update { transaction() }
     completion?()
 
