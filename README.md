@@ -82,10 +82,16 @@ foo.remove()
 
 ```swift
 // Fetch all objects
-_ = Foo.allObjects()
+_ = Foo.arrayOfObjects
 
-// Fetch filtred objects
-_ = Foo.filtred("bar == 'something'")
+// Realm results
+_ = Foo.resultsOfObjects
+
+// Fetch filtred array
+_ = Foo.filtredArray("bar == 'something'")
+
+// Fetch filtred results
+_ = Foo.filtredResults("bar == 'something'")
 ```
 
 ### DBManager
