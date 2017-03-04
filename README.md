@@ -46,11 +46,6 @@ end
 
 ## Usage
 
-### Migration from 1.x to 2.x
-* `typealias Model` is removed and no longer needed
-
-* `allObjects` static property is now `allObjects()` static method
-
 ### CUD operations
 
 ```swift
