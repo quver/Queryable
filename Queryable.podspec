@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'Queryable'
-  s.version               = '2.0.0'
+  s.version               = '3.0.0'
   s.summary               = 'Realm Query Extension'
   s.description           = <<-DESC
 Extension for CRUD operation just on object

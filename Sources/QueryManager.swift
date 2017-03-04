@@ -10,32 +10,41 @@ import Foundation
 import RealmSwift
 
 public final class QueryManager {
-  
-  typealias Transaction = (_ realm: Realm)->()
+
+  public typealias Transaction = () -> Void
+  typealias RealmTransaction = (_ realm: Realm) -> Void
 
   /// Get objects of entity with optional filter predicate
   ///
-  /// - parameter entity: Entity class name
-  /// - parameter filter: Predicate filter
-  ///
-  /// - returns: Array of objects, could return empty array
-  public class func getObjects<T: Object>(of entity: T.Type, filter: String? = nil) -> [T] {
-    guard let realm = try? Realm() else { return [] }
-
+  /// - Parameters:
+  ///   - entity: Entity class name
+  ///   - filter: Predicate filter
+  /// - Returns: Results object
+  public class func results<T: Object>(of entity: T.Type, filter: String? = nil) -> Results<T> {
+    let realm = try! Realm()
     var results = realm.objects(entity)
 
     if let filter = filter {
       results = results.filter(filter)
     }
 
-    return Array(results)
+    return results
+  }
+
+  /// Get objects of entity with optional filter predicate
+  ///
+  /// - Parameters:
+  ///   - entity: Entity class name
+  ///   - filter: Predicate filter
+  /// - Returns: Array of objects, could return empty array
+  public class func array<T: Object>(of entity: T.Type, filter: String? = nil) -> [T] {
+    return Array(results(of: entity, filter: filter))
   }
 
   /// Generic adding object to entity
   ///
-  /// - parameter object: Object which inherit from RealmSwift.Object
-  ///
-  /// - returns: Status of write transaction
+  /// - Parameter object: Object which inherit from RealmSwift.Object
+  /// - Returns: Status of write transaction
   @discardableResult public class func add(object: Object) -> Bool {
     return genericWrite { realm in
       realm.add(object)
@@ -44,19 +53,17 @@ public final class QueryManager {
 
   /// Generic update object of entitiy
   ///
-  /// - parameter transaction: closure with object changes
-  ///
-  /// - returns: Status of write transaction
-  @discardableResult public class func update(transaction: @escaping ()->()) -> Bool {
+  /// - Parameter transaction: Closure with object changes
+  /// - Returns: Status of write transaction
+  @discardableResult public class func update(transaction: @escaping Transaction) -> Bool {
     return genericWrite { _ in
       transaction()
     }
   }
 
-
   /// Generic remove all object from Realm
   ///
-  /// - returns: Status of write transaction
+  /// - Returns: Status of write transaction
   @discardableResult public class func removeAll() -> Bool {
     return genericWrite { realm in
       realm.deleteAll()
@@ -65,19 +72,17 @@ public final class QueryManager {
 
   /// Generic remove object of entity
   ///
-  /// - parameter object: Object which should be removed
-  ///
-  /// - returns: Status of write transaction
+  /// - Parameter object: Object which should be removed
+  /// - Returns: Status of write transaction
   @discardableResult public class func remove(object: Object) -> Bool {
     return genericWrite { realm in
       realm.delete(object)
     }
   }
 
-  private class func genericWrite(transaction: @escaping Transaction) -> Bool {
-    guard let realm = try? Realm() else { return false }
-
+  private class func genericWrite(transaction: @escaping RealmTransaction) -> Bool {
     do {
+      let realm = try Realm()
       try realm.write {
         transaction(realm)
       }

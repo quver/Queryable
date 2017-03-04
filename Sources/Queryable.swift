@@ -13,23 +13,39 @@ public protocol Queryable: class {}
 
 public extension Queryable where Self: Object {
 
-  typealias Completion = () -> ()
-  typealias Transaction = () -> ()
+  typealias Completion = () -> Void
+  typealias Transaction = () -> Void
 
   /// Fetch all object from database
   ///
   /// - returns: Array of objects
-  static func allObjects() -> [Self] {
-    return QueryManager.getObjects(of: Self.self)
+  static var arrayOfObject: [Self] {
+    return QueryManager.array(of: Self.self)
+  }
+
+  /// Fetch all object from database
+  ///
+  /// - returns: Results object
+  static var resultsOfObject: Results<Self> {
+    return QueryManager.results(of: Self.self)
   }
 
   /// Fetch objects with filter
   ///
   /// - parameter filter: Same syntax as in pure Realm
   ///
-  /// - returns: Array of objects
-  @discardableResult static func filtred(_ filter: String) -> [Self] {
-    return QueryManager.getObjects(of: Self.self, filter: filter)
+  /// - returns: Results object
+  @discardableResult static func filtredResults(_ filter: String) -> [Self] {
+    return QueryManager.array(of: Self.self, filter: filter)
+  }
+
+  /// Fetch objects with filter
+  ///
+  /// - parameter filter: Same syntax as in pure Realm
+  ///
+  /// - returns: Results of objects
+  @discardableResult static func filtredArray(_ filter: String) -> [Self] {
+    return QueryManager.array(of: Self.self, filter: filter)
   }
 
   /// Add self to database
