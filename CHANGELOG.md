@@ -1,5 +1,13 @@
 # Change Log
 
+## [3.0.0](https://github.com/quver/Queryable/tree/3.0.0) (2017-03-04)
+[Full Changelog](https://github.com/quver/Queryable/compare/2.0.0...3.0.0)
+
+**Implemented enhancements:**
+
+- \[QT-10\] Add results property + refactor [\#9](https://github.com/quver/Queryable/pull/9) ([quver](https://github.com/quver))
+- \[QT-8\] Add @discardableResult [\#8](https://github.com/quver/Queryable/pull/8) ([quver](https://github.com/quver))
+
 ## [2.0.0](https://github.com/quver/Queryable/tree/2.0.0) (2016-12-05)
 [Full Changelog](https://github.com/quver/Queryable/compare/1.0.2...2.0.0)
 
